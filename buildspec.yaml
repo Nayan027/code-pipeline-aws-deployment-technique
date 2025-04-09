@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo installing dependencies...
+      - pip install --upgrade pip
+      - pip install -r flaskapp/requirements.txt
+
+
+  build:
+    commands:
+      - echo build phase started...
+      - zip -r artifact.zip appspec.yml flaskapp/** scripts/**
+      - aws s3 cp artifact.zip s3://demo-zero-hero3/artifact.zip
+
+  artifacts:
+    files:
+      - artifact.zip
