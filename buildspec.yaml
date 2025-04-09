@@ -16,7 +16,7 @@ phases:
       - zip -r artifact.zip appspec.yml flaskapp/** scripts/**
       - aws s3 cp artifact.zip s3://demo-zero-hero3/artifact.zip
 
-  artifacts:
+artifacts:
     files:
       - artifact.zip
 
