@@ -1,31 +1,9 @@
-# version: 0.0
-# os: linux
-
-# files:
-#   - source: /flaskapp
-#     destination: /home/ubuntu/flaskapp
-
-# hooks:
-#   BeforeInstall:
-#     - location: scripts/stop.sh
-#       timeout: 300
-#       runas: ubuntu
-
-#   AfterInstall:
-#     - location: scripts/start.sh
-#       timeout: 300
-#       runas: ubuntu
-
-
 version: 0.0
 os: linux
 
 files:
   - source: /flaskapp
     destination: /home/ubuntu/flaskapp
-
-  - source: /scripts
-    destination: /home/ubuntu/scripts
 
 hooks:
   BeforeInstall:
@@ -38,12 +16,34 @@ hooks:
       timeout: 300
       runas: ubuntu
 
-  ApplicationStart:
-    - location: scripts/restart.sh
-      timeout: 300
-      runas: ubuntu
 
-  ValidateService:
-    - location: scripts/health_check.sh
-      timeout: 300
-      runas: ubuntu
+# version: 0.0
+# os: linux
+
+# files:
+#   - source: /flaskapp
+#     destination: /home/ubuntu/flaskapp
+
+#   - source: /scripts
+#     destination: /home/ubuntu/scripts
+
+# hooks:
+#   BeforeInstall:
+#     - location: scripts/stop.sh
+#       timeout: 300
+#       runas: ubuntu
+
+#   AfterInstall:
+#     - location: scripts/start.sh
+#       timeout: 300
+#       runas: ubuntu
+
+#   ApplicationStart:
+#     - location: scripts/restart.sh
+#       timeout: 300
+#       runas: ubuntu
+
+#   ValidateService:
+#     - location: scripts/health_check.sh
+#       timeout: 300
+#       runas: ubuntu
