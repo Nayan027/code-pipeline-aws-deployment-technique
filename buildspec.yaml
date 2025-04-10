@@ -45,6 +45,8 @@ phases:
 artifacts:
   files:
     - flaskapp/**
+    - flaskapp/templates/**
+    - flaskapp/static/**
     - scripts/**
     - appspec.yml
     
